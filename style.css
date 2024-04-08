@@ -1,0 +1,95 @@
+/* BOX0 */
+.box0 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* BOX01 */
+.box01 {
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgba(83, 83, 83, 0.493);
+}
+
+
+/* BOX02 */
+.box02 h1,
+span {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+/* BOX03 */
+.box03 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* FORM */
+input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#password,
+#username,
+#risposta {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(226, 223, 223, 0.336);
+}
+
+
+#password:focus,
+#username:focus,
+#risposta:focus {
+    border: 10px solid black;
+    border-radius: 20px;
+}
+
+
+/* BOX05 */
+.box05 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* BOX06 */
+.box06 {
+    width: 120px;
+    border: 1px solid black;
+}
+
+
+/* BOX07 */
+.box07 {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* BOX09 */
+.box09 {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
