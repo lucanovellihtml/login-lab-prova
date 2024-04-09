@@ -8,6 +8,8 @@ let unsernameIscrizione = document.getElementById("username_iscrizione");
 let passwordIscrizione = document.getElementById("password_iscrizione");
 let buttonLogin = document.getElementById("button1");
 let buttonIscrizione = document.getElementById("button2");
+let buttonClosePopup = document.getElementById("bottone_close");
+let popUp = document.getElementById("popup_box_fail");
 
 /*if (username != null && password != null && buttonLogin != null) {
     console.log("ELEMENTI ESISTONO");
@@ -51,6 +53,13 @@ buttonIscrizione.addEventListener("click", function () {
 })
 
 
+window.addEventListener("click", function (event) {
+
+    if (event.target == buttonClosePopup)
+        popUp.classList.remove("show");
+
+})
+
 
 function saveSubscribe(key, element, stringa) {
 
@@ -58,9 +67,15 @@ function saveSubscribe(key, element, stringa) {
         localStorage.setItem(key, "[]");
 
     array = JSON.parse(localStorage.getItem(key));
-    array.push(element.value);
 
-    localStorage.setItem(key, JSON.stringify(array));
+    if (element.value.length == 0) {
+        popUp.classList.add("show");
+    }
+    else {
+        array.push(element.value);
+        localStorage.setItem(key, JSON.stringify(array));
+        console.log(stringa + "-->" + array);
+    }
 
-    console.log(stringa + "-->" + array);
+
 }
