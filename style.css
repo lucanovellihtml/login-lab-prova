@@ -110,6 +110,9 @@ input:focus {
     display: block;
 }
 
+#popup_box_ok {
+    background-color: green;
+}
 
 /* BOX11 */
 .box11 {
