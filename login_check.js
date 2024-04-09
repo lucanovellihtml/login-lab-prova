@@ -43,12 +43,16 @@ buttonLogin.addEventListener("click", function () {
 
 })
 
+
+
 //VIENE ANALIZZATO IL CLICK AL BOTTONE DI ISCRIZIONE, POI INNESCATO IL METODO DI SALVATAGGIO DELL'INPUT
 buttonIscrizione.addEventListener("click", function () {
     console.clear();
     saveSubscribe(keyUsername, unsernameIscrizione, "USERNAME");
     saveSubscribe(keyPassword, passwordIscrizione, "PASSWORD");
 })
+
+
 
 //VIENE CONTROLLATO QUALE PULSTANTE DI ESC POPUP VIENE CLICCATO
 window.addEventListener("click", function (event) {
@@ -60,6 +64,8 @@ window.addEventListener("click", function (event) {
         popUpOk.classList.remove("show");
 })
 
+
+
 //VIENE SALVATO L'INPUT NELLO SPAZIO DI ARCHIVIAZIONE LOCALE
 function saveSubscribe(key, element, stringa) {
 
@@ -68,7 +74,7 @@ function saveSubscribe(key, element, stringa) {
 
     array = JSON.parse(localStorage.getItem(key));
 
-    if (element.value.length == 0) {
+    if (element.value.length == 0 || element.value.includes(" ")) {
         popUpFail.classList.add("show");
     }
     else {
