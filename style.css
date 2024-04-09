@@ -110,8 +110,8 @@ input:focus {
     display: block;
 }
 
-#popup_box_ok {
-    background-color: green;
+#popup_box_ok .box10 {
+    background-color: rgb(15, 238, 71);
 }
 
 /* BOX11 */
