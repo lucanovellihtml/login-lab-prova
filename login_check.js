@@ -8,8 +8,10 @@ let unsernameIscrizione = document.getElementById("username_iscrizione");
 let passwordIscrizione = document.getElementById("password_iscrizione");
 let buttonLogin = document.getElementById("button1");
 let buttonIscrizione = document.getElementById("button2");
-let buttonClosePopup = document.getElementById("bottone_close");
-let popUp = document.getElementById("popup_box_fail");
+let buttonClosePopupF = document.getElementById("bottone_close_fail");
+let buttonClosePopupK = document.getElementById("bottone_close_okey");
+let popUpFail = document.getElementById("popup_box_fail");
+let popUpOk = document.getElementById("popup_box_ok");
 
 /*if (username != null && password != null && buttonLogin != null) {
     console.log("ELEMENTI ESISTONO");
@@ -55,9 +57,11 @@ buttonIscrizione.addEventListener("click", function () {
 
 window.addEventListener("click", function (event) {
 
-    if (event.target == buttonClosePopup)
-        popUp.classList.remove("show");
+    if (event.target == buttonClosePopupF) 
+        popUpFail.classList.remove("show");
 
+    if (event.target == buttonClosePopupK)
+        popUpOk.classList.remove("show");
 })
 
 
@@ -69,11 +73,12 @@ function saveSubscribe(key, element, stringa) {
     array = JSON.parse(localStorage.getItem(key));
 
     if (element.value.length == 0) {
-        popUp.classList.add("show");
+        popUpFail.classList.add("show");
     }
     else {
         array.push(element.value);
         localStorage.setItem(key, JSON.stringify(array));
+        popUpOk.classList.add("show");
         console.log(stringa + "-->" + array);
     }
 
