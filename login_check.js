@@ -13,13 +13,9 @@ let buttonClosePopupK = document.getElementById("bottone_close_okey");
 let popUpFail = document.getElementById("popup_box_fail");
 let popUpOk = document.getElementById("popup_box_ok");
 
-/*if (username != null && password != null && buttonLogin != null) {
-    console.log("ELEMENTI ESISTONO");
-} else {
-    console.log("ELEMENTI NON ESISTONO");
-}*/
 
 
+//VIENE ANALIZZATO IL CLICK AL BOTTONE DI LOGIN, POI INNESCATO IL METODO DI CONTROLLO DELLA LOGIN
 buttonLogin.addEventListener("click", function () {
     console.clear();
     let arrayUsername = JSON.parse(localStorage.getItem(keyUsername));
@@ -47,24 +43,24 @@ buttonLogin.addEventListener("click", function () {
 
 })
 
-
+//VIENE ANALIZZATO IL CLICK AL BOTTONE DI ISCRIZIONE, POI INNESCATO IL METODO DI SALVATAGGIO DELL'INPUT
 buttonIscrizione.addEventListener("click", function () {
     console.clear();
     saveSubscribe(keyUsername, unsernameIscrizione, "USERNAME");
     saveSubscribe(keyPassword, passwordIscrizione, "PASSWORD");
 })
 
-
+//VIENE CONTROLLATO QUALE PULSTANTE DI ESC POPUP VIENE CLICCATO
 window.addEventListener("click", function (event) {
 
-    if (event.target == buttonClosePopupF) 
+    if (event.target == buttonClosePopupF)
         popUpFail.classList.remove("show");
 
     if (event.target == buttonClosePopupK)
         popUpOk.classList.remove("show");
 })
 
-
+//VIENE SALVATO L'INPUT NELLO SPAZIO DI ARCHIVIAZIONE LOCALE
 function saveSubscribe(key, element, stringa) {
 
     if (localStorage.getItem(key) == null)
@@ -84,3 +80,6 @@ function saveSubscribe(key, element, stringa) {
 
 
 }
+
+
+
