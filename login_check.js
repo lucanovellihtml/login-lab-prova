@@ -1,5 +1,3 @@
-const usernameArray = [];
-const passwordArray = [];
 let keyUsername = "array_iscrizione_username";
 let keyPassword = "array_iscrizione_password";
 
@@ -19,11 +17,16 @@ let buttonIscrizione = document.getElementById("button2");
 
 
 buttonLogin.addEventListener("click", function () {
+    console.clear();
+    let arrayUsername = JSON.parse(localStorage.getItem(keyUsername));
+    let arrayPassword = JSON.parse(localStorage.getItem(keyPassword));
+
     let auth = false;
-    for (let i = 0; i <= usernameArray.length; i++) {
-        if (username.value === usernameArray[i]) {
+
+    for (let i = 0; i <= arrayUsername.length; i++) {
+        if (username.value === arrayUsername[i]) {
             let posizione = i;
-            if (password.value === passwordArray[posizione]) {
+            if (password.value === arrayPassword[posizione]) {
                 /*console.log("USERNAME INSERITO --> " + username.value + " - PAASWORD INSERITA --> " + password.value);*/
                 auth = true;
                 break;
@@ -42,13 +45,14 @@ buttonLogin.addEventListener("click", function () {
 
 
 buttonIscrizione.addEventListener("click", function () {
-    saveSubscribe(keyUsername, usernameArray, unsernameIscrizione, "USERNAME");
-    saveSubscribe(keyPassword, passwordArray, passwordIscrizione, "PASSWORD");
+    console.clear();
+    saveSubscribe(keyUsername, unsernameIscrizione, "USERNAME");
+    saveSubscribe(keyPassword, passwordIscrizione, "PASSWORD");
 })
 
 
 
-function saveSubscribe(key, array, element, stringa) {
+function saveSubscribe(key, element, stringa) {
 
     if (localStorage.getItem(key) == null)
         localStorage.setItem(key, "[]");
@@ -58,7 +62,5 @@ function saveSubscribe(key, array, element, stringa) {
 
     localStorage.setItem(key, JSON.stringify(array));
 
-    console.log(stringa + " --> " + array);
-
+    console.log(stringa + "-->" + array);
 }
-
